@@ -138,16 +138,7 @@ a:hover { color: var(--green-dark); }
 
 /* Projects */
 
-.projects { padding-top: clamp(28px, 4vw, 44px); padding-bottom: clamp(56px, 8vw, 96px); }
-
-.section-head { margin-bottom: 28px; }
-.section-head h2 {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(26px, 3.4vw, 40px);
-  letter-spacing: -0.015em;
-  margin: 0;
-}
+.projects { padding-top: clamp(20px, 3vw, 36px); padding-bottom: clamp(56px, 8vw, 96px); }
 
 .project-grid {
   display: grid;
@@ -155,8 +146,11 @@ a:hover { color: var(--green-dark); }
   gap: 20px;
 }
 
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
 .project {
   position: relative;
+  overflow: hidden;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -185,6 +179,24 @@ a:hover { color: var(--green-dark); }
   position: absolute;
   inset: 0;
   border-radius: 20px;
+}
+
+/* A faint drawing of what the project is for, tucked into the corner. */
+.project__glyph {
+  position: absolute;
+  right: -14px;
+  bottom: -10px;
+  width: 120px;
+  height: 120px;
+  color: var(--green);
+  opacity: 0.07;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.project:hover .project__glyph,
+.project:focus-within .project__glyph {
+  opacity: 0.13;
+  transform: translate(-4px, -4px) rotate(-3deg);
 }
 
 .project__meta {

@@ -36,6 +36,8 @@ existing `<article class="project">`, then set:
   on, and `js/main.js` picks them up with no other changes.
 - the badge class — `badge--live`, `badge--beta`, or plain `badge` for an idea.
 - the name, subtitle, description, "Updated" month, and link.
+- the glyph — the faint drawing in the card's corner. Add a `<symbol>` to the
+  sprite at the top of `index.html` and point the card's `<use href>` at its id.
 
 An idea with no link uses a "Follow along" button that opens the pitch modal
 instead of a `Try it →` link. Either way the whole card is the click target —

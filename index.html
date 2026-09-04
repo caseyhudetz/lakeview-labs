@@ -18,6 +18,74 @@
 <body>
 <a class="skip-link" href="#projects">Skip to the projects</a>
 
+<!-- Card glyphs. Each project references one by id; add a symbol here for a
+     new card, then point its <use href> at it. -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="g-spray" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="15" y="16" width="16" height="26" rx="4"/>
+    <path d="M20 16v-5h6v5"/>
+    <path d="M36 11h1M40 15h1M35 19h1M41 22h1"/>
+  </symbol>
+  <symbol id="g-board" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="7" y="12" width="34" height="26" rx="3"/>
+    <rect x="13" y="18" width="10" height="7" rx="1.5"/>
+    <rect x="27" y="22" width="9" height="10" rx="1.5"/>
+    <path d="M24 12V7"/>
+    <circle cx="24" cy="6" r="2"/>
+  </symbol>
+  <symbol id="g-pumpkin" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 17c-9 0-14 5-14 12s5 12 14 12 14-5 14-12-5-12-14-12Z"/>
+    <path d="M18 19c-3 6-3 14 0 20M30 19c3 6 3 14 0 20"/>
+    <path d="M24 17v-5c0-2 2-3 4-3"/>
+  </symbol>
+  <symbol id="g-rat" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 36c-1-8 4-13 11-13 6 0 10 3 11 8"/>
+    <path d="M12 36h20"/>
+    <path d="M32 31l9 2-9 4"/>
+    <circle cx="30" cy="21" r="3.5"/>
+    <path d="M12 36c-5 1-7 3-6 6"/>
+  </symbol>
+  <symbol id="g-chart" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 10v30h30"/>
+    <path d="M14 33l8-9 6 5 11-14"/>
+    <circle cx="14" cy="33" r="1.6" fill="currentColor" stroke="none"/>
+    <circle cx="22" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+    <circle cx="28" cy="29" r="1.6" fill="currentColor" stroke="none"/>
+    <circle cx="39" cy="15" r="1.6" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="g-districts" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 8 40 13v22l-16 5-16-5V13Z"/>
+    <path d="M24 8v32"/>
+    <path d="M8 24h32" stroke-dasharray="3 3"/>
+  </symbol>
+  <symbol id="g-scooter" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="13" cy="34" r="5"/>
+    <circle cx="35" cy="34" r="5"/>
+    <path d="M13 34h18l4-19"/>
+    <path d="M31 15h7"/>
+  </symbol>
+  <symbol id="g-stump" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 38V24M34 38V24"/>
+    <ellipse cx="24" cy="24" rx="10" ry="4"/>
+    <ellipse cx="24" cy="24" rx="4.5" ry="1.8"/>
+    <path d="M14 38h20"/>
+    <path d="M8 38h4M36 38h4"/>
+  </symbol>
+  <symbol id="g-bike" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="32" r="7"/>
+    <circle cx="36" cy="32" r="7"/>
+    <path d="M12 32l8-14h9l7 14M20 18l8 14"/>
+    <path d="M29 18l3-4"/>
+  </symbol>
+  <symbol id="g-skyline" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 40h32"/>
+    <path d="M10 40V26h8v14"/>
+    <path d="M20 40V18h8v22"/>
+    <path d="M30 40V13h8v27" stroke-dasharray="3 3"/>
+  </symbol>
+</svg>
+
+
 <header class="site-header shell">
   <a class="wordmark" href="#top">
     <span class="wordmark__mark">
@@ -35,10 +103,6 @@
 
 <main id="top">
   <section class="projects shell" id="projects">
-    <div class="section-head">
-      <h2>The work</h2>
-    </div>
-
     <!-- To add a project: copy one card, set data-status to live | beta | idea. -->
     <div class="project-grid" id="project-grid">
       <article class="project" data-status="live">
@@ -46,6 +110,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Aug 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-spray"/></svg>
         <h3>Gone</h3>
         <div class="project__subtitle">Graffiti removal</div>
         <p>Snap a photo of a tagged wall and Gone routes it to the right cleanup crew, then tracks it until the block looks cared-for again.</p>
@@ -59,6 +124,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Aug 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-board"/></svg>
         <h3>Bulboard</h3>
         <div class="project__subtitle">Hyperlocal bulletin board</div>
         <p>A hyperlocal bulletin board for keeping up with what's happening around East Lakeview — events, notices, and neighborly odds and ends, all in one place.</p>
@@ -72,6 +138,7 @@
           <span class="badge badge--beta">Beta</span>
           <span class="project__updated">Updated Jul 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-pumpkin"/></svg>
         <h3>The Haunt</h3>
         <div class="project__subtitle">Decoration voting</div>
         <p>Vote for the best Halloween decorations on the block and crown a neighborhood champion each October. Bragging rights included.</p>
@@ -85,6 +152,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Aug 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-rat"/></svg>
         <h3>Rats of Lakeview</h3>
         <div class="project__subtitle">Tracking the local rat population</div>
         <p>A running look at the rats of Lakeview — where they're turning up, hot spots to watch, and what's being done about them.</p>
@@ -98,6 +166,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Aug 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-chart"/></svg>
         <h3>44 Graffiti</h3>
         <div class="project__subtitle">Live graffiti data · 44th Ward</div>
         <p>A live look at graffiti activity across the 44th Ward — what's getting tagged, where, and how fast it's cleaned up.</p>
@@ -111,6 +180,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Sep 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-districts"/></svg>
         <h3>Jurisdiction</h3>
         <div class="project__subtitle">Wards, districts, and service areas</div>
         <p>A hyper-specific breakdown of where your block sits inside Chicago&#39;s bigger systems &mdash; the wards, districts, and service areas that quietly decide how things get handled around here.</p>
@@ -124,6 +194,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Sep 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-scooter"/></svg>
         <h3>Scoot</h3>
         <div class="project__subtitle">Scooter removal requests</div>
         <p>A map of scooter removal requests around the neighborhood &mdash; where the abandoned ones are turning up and what&#39;s already been called in.</p>
@@ -137,6 +208,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Sep 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-stump"/></svg>
         <h3>Stump</h3>
         <div class="project__subtitle">Tree removals without a replanting</div>
         <p>A map of the stumps left behind &mdash; spots where a tree came out but nobody has put in a request for a new one yet.</p>
@@ -150,6 +222,7 @@
           <span class="badge badge--live">Live</span>
           <span class="project__updated">Updated Sep 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-bike"/></svg>
         <h3>44 Biking</h3>
         <div class="project__subtitle">Bike crashes &middot; 44th Ward</div>
         <p>Every reported bike accident in the ward since 2018, mapped &mdash; the corners and stretches of road that keep turning up.</p>
@@ -163,6 +236,7 @@
           <span class="badge">Idea</span>
           <span class="project__updated">Updated Aug 2026</span>
         </div>
+        <svg class="project__glyph" aria-hidden="true"><use href="#g-skyline"/></svg>
         <h3>Soon</h3>
         <div class="project__subtitle">Visualizing the future</div>
         <p>A before-and-after view of proposed changes to the neighborhood, so neighbors can picture what's coming before a shovel hits the ground.</p>
