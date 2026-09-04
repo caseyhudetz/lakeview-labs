@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lakeview Labs — experiments for Lakeview East</title>
+<meta name="description" content="A small, non-commercial workshop run by two neighbors, building little web experiments for Lakeview East, Chicago.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lakeview Labs">
+<meta property="og:description" content="Experiments to make Lakeview safer, stronger, and more beautiful.">
+<meta name="theme-color" content="#14675B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#projects">Skip to the projects</a>
+
+<header class="site-header shell">
+  <a class="wordmark" href="#top">
+    <span class="wordmark__mark">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M13.7 25 Q17 22.5 20 25 T26.3 25 L28.6 30 Q29.6 32.2 27.4 32.2 H12.6 Q10.4 32.2 11.4 30 Z" fill="#DE9A4A"/>
+        <path d="M16 9 V17 L10.6 29.4 Q9.5 32.2 12.4 32.2 H27.6 Q30.5 32.2 29.4 29.4 L24 17 V9" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.4 9 H25.6" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20.5" cy="21.5" r="1.15" fill="#F5EFE2"/>
+        <circle cx="23.4" cy="18.4" r="0.85" fill="#F5EFE2"/>
+      </svg>
+    </span>
+    <span class="wordmark__text">
+      <span class="wordmark__name">Lakeview Labs</span>
+      <span class="wordmark__tag">East · Neighborhood Lab</span>
+    </span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <button type="button" class="btn btn--ink" data-open-pitch>Pitch an idea</button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero weave shell">
+    <div class="hero__inner">
+      <h1>Experiments to make Lakeview <em>safer, stronger, and more beautiful.</em></h1>
+    </div>
+  </section>
+
+  <section class="projects shell" id="projects">
+    <div class="section-head">
+      <div>
+        <h2>The work</h2>
+        <p>Each one is a real thing you can open and use. Some are polished, some are held together with tape.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects by status">
+        <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="live" aria-pressed="false">Live</button>
+        <button type="button" class="filter" data-filter="beta" aria-pressed="false">Beta</button>
+        <button type="button" class="filter" data-filter="idea" aria-pressed="false">Idea</button>
+      </div>
+    </div>
+
+    <!-- To add a project: copy one card, set data-status to live | beta | idea. -->
+    <div class="project-grid" id="project-grid">
+      <article class="project" data-status="live">
+        <div class="project__meta">
+          <span class="badge badge--live">Live</span>
+          <span class="project__updated">Updated Aug 2026</span>
+        </div>
+        <h3>Gone</h3>
+        <div class="project__subtitle">Graffiti removal</div>
+        <p>Snap a photo of a tagged wall and Gone routes it to the right cleanup crew, then tracks it until the block looks cared-for again.</p>
+        <div class="project__footer">
+          <a class="project__cta" href="https://graffiti-zapper.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project" data-status="live">
+        <div class="project__meta">
+          <span class="badge badge--live">Live</span>
+          <span class="project__updated">Updated Aug 2026</span>
+        </div>
+        <h3>Bulboard</h3>
+        <div class="project__subtitle">Hyperlocal bulletin board</div>
+        <p>A hyperlocal bulletin board for keeping up with what's happening around East Lakeview — events, notices, and neighborly odds and ends, all in one place.</p>
+        <div class="project__footer">
+          <a class="project__cta" href="https://nettelhorst.bulbord.com/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project" data-status="beta">
+        <div class="project__meta">
+          <span class="badge badge--beta">Beta</span>
+          <span class="project__updated">Updated Jul 2026</span>
+        </div>
+        <h3>The Haunt</h3>
+        <div class="project__subtitle">Decoration voting</div>
+        <p>Vote for the best Halloween decorations on the block and crown a neighborhood champion each October. Bragging rights included.</p>
+        <div class="project__footer">
+          <a class="project__cta" href="https://thehauntof44.netlify.app/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project" data-status="live">
+        <div class="project__meta">
+          <span class="badge badge--live">Live</span>
+          <span class="project__updated">Updated Aug 2026</span>
+        </div>
+        <h3>Rats of Lakeview</h3>
+        <div class="project__subtitle">Tracking the local rat population</div>
+        <p>A running look at the rats of Lakeview — where they're turning up, hot spots to watch, and what's being done about them.</p>
+        <div class="project__footer">
+          <a class="project__cta" href="https://rats.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project" data-status="live">
+        <div class="project__meta">
+          <span class="badge badge--live">Live</span>
+          <span class="project__updated">Updated Aug 2026</span>
+        </div>
+        <h3>44 Graffiti</h3>
+        <div class="project__subtitle">Live graffiti data · 44th Ward</div>
+        <p>A live look at graffiti activity across the 44th Ward — what's getting tagged, where, and how fast it's cleaned up.</p>
+        <div class="project__footer">
+          <a class="project__cta" href="https://44graffiti.netlify.app/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project" data-status="idea">
+        <div class="project__meta">
+          <span class="badge">Idea</span>
+          <span class="project__updated">Updated Aug 2026</span>
+        </div>
+        <h3>Soon</h3>
+        <div class="project__subtitle">Visualizing the future</div>
+        <p>A before-and-after view of proposed changes to the neighborhood, so neighbors can picture what's coming before a shovel hits the ground.</p>
+        <div class="project__footer">
+          <button type="button" class="project__cta project__cta--muted" data-open-pitch>Follow along</button>
+        </div>
+      </article>
+    </div>
+
+    <p class="projects__empty" id="projects-empty" hidden>Nothing here yet — try another filter.</p>
+  </section>
+</main>
+
+<footer class="site-footer shell" id="about">
+  <div class="about weave weave--light">
+    <div class="about__body">
+      <span class="eyebrow">About this project</span>
+      <p>Lakeview Labs is a small, non-commercial workshop run by two neighbors. We build and share little web and app experiments made for one place in particular — Lakeview East. Everything here is a work in progress, made in our spare time because we live here too.</p>
+    </div>
+    <div class="about__contact">
+      <div class="about__contact-label">Get in touch</div>
+      <a href="mailto:hello@lakeviewlabs.org">hello@lakeviewlabs.org</a>
+    </div>
+  </div>
+  <div class="colophon">
+    <div class="colophon__brand">
+      <span class="colophon__mark">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M13.7 25 Q17 22.5 20 25 T26.3 25 L28.6 30 Q29.6 32.2 27.4 32.2 H12.6 Q10.4 32.2 11.4 30 Z" fill="#DE9A4A"/>
+          <path d="M16 9 V17 L10.6 29.4 Q9.5 32.2 12.4 32.2 H27.6 Q30.5 32.2 29.4 29.4 L24 17 V9" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.4 9 H25.6" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="colophon__name">Lakeview Labs</span>
+    </div>
+    <span>Made in Lakeview East by Casey &amp; Ben.</span>
+  </div>
+</footer>
+
+<!-- Pitch modal. Set data-endpoint to a form endpoint (Formspree, Netlify
+     function, Worker…) to collect pitches; without one it falls back to email. -->
+<div class="modal" id="pitch-modal" role="dialog" aria-modal="true" aria-labelledby="pitch-title" data-endpoint="" hidden>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <div>
+        <h2 id="pitch-title">Pitch an idea</h2>
+        <p>A problem worth solving, or a project you'd build — send it our way.</p>
+      </div>
+      <button type="button" class="modal__close" data-close-pitch aria-label="Close">×</button>
+    </div>
+
+    <form class="pitch-form" id="pitch-form" novalidate>
+      <label class="field">
+        <span>Your idea or the problem</span>
+        <textarea name="idea" rows="4" required placeholder="e.g. It's hard to know when street cleaning is happening on our block…"></textarea>
+      </label>
+      <label class="field">
+        <span>Your email</span>
+        <input type="email" name="email" required placeholder="you@example.com">
+      </label>
+      <p class="pitch-form__error" id="pitch-error" role="alert" hidden></p>
+      <button type="submit" class="pitch-form__submit" disabled>Send it over</button>
+    </form>
+
+    <div class="pitch-done" id="pitch-done" hidden>
+      <div class="pitch-done__check" aria-hidden="true">✓</div>
+      <h3>Thanks, neighbor.</h3>
+      <p>We got your idea and we'll be in touch. Odds are you'll just run into one of us on the block first.</p>
+      <button type="button" class="btn btn--green" data-close-pitch>Done</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

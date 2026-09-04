@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#14675B">
+  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="400" fill="#14675B"></rect>
+    <g transform="translate(200 200) scale(4.6) translate(-20 -20)" fill="none">
+      <path d="M13.7 25 Q17 22.5 20 25 T26.3 25 L28.6 30 Q29.6 32.2 27.4 32.2 H12.6 Q10.4 32.2 11.4 30 Z" fill="#DE9A4A"></path>
+      <path d="M16 9 V17 L10.6 29.4 Q9.5 32.2 12.4 32.2 H27.6 Q30.5 32.2 29.4 29.4 L24 17 V9" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M14.4 9 H25.6" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round"></path>
+      <circle cx="20.5" cy="21.5" r="1.15" fill="#F5EFE2"></circle>
+      <circle cx="23.4" cy="18.4" r="0.85" fill="#F5EFE2"></circle>
+    </g>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #F5EFE2; }
+  a { color: #14675B; text-decoration: none; }
+  a:hover { color: #0E4A41; }
+  ::selection { background: #DE9A4A; color: #1B2426; }
+  @keyframes floatIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F5EFE2; color: #1B2426; font-family: 'Public Sans', sans-serif; -webkit-font-smoothing: antialiased;">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px clamp(20px, 5vw, 96px); max-width: 1280px; margin: 0 auto;">
+    <a href="#top" style="display: flex; align-items: center; gap: 13px; color: #1B2426;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 13px; background: #14675B; box-shadow: 0 2px 0 #0E4A41;">
+        <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M13.7 25 Q17 22.5 20 25 T26.3 25 L28.6 30 Q29.6 32.2 27.4 32.2 H12.6 Q10.4 32.2 11.4 30 Z" fill="#DE9A4A"></path>
+          <path d="M16 9 V17 L10.6 29.4 Q9.5 32.2 12.4 32.2 H27.6 Q30.5 32.2 29.4 29.4 L24 17 V9" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M14.4 9 H25.6" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round"></path>
+          <circle cx="20.5" cy="21.5" r="1.15" fill="#F5EFE2"></circle>
+          <circle cx="23.4" cy="18.4" r="0.85" fill="#F5EFE2"></circle>
+        </svg>
+      </span>
+      <span style="display: flex; flex-direction: column; line-height: 1;">
+        <span style="font-family: 'Spectral', serif; font-weight: 700; font-size: 21px; letter-spacing: -0.01em;">Lakeview Labs</span>
+        <span style="font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #14675B; margin-top: 6px;">East · Neighborhood Lab</span>
+      </span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 16px; font-size: 15px; font-weight: 500;">
+      <button onClick="{{ openModal }}" style="display: inline-flex; align-items: center; gap: 8px; background: #1B2426; color: #F5EFE2; padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; font-family: 'Public Sans', sans-serif; border: none; cursor: pointer;">Pitch an idea</button>
+    </nav>
+  </header>
+
+  <section id="top" style="max-width: 1280px; margin: 0 auto; padding: clamp(44px, 8vw, 88px) clamp(20px, 5vw, 96px); position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(115deg, rgba(20,103,91,0.06) 0 1px, transparent 1px 26px); pointer-events: none;"></div>
+    <div style="position: relative; max-width: 900px;">
+      
+      <h1 style="font-family: 'Spectral', serif; font-weight: 700; font-size: clamp(40px, 7.5vw, 70px); line-height: 1.04; letter-spacing: -0.02em; margin: 0; text-wrap: balance;">Experiments to make Lakeview <span style="color: #14675B; font-style: italic;">safer, stronger, and more beautiful.</span></h1>
+    </div>
+  </section>
+
+  <section id="projects" style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 96px) clamp(56px, 8vw, 96px);">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 32px;">
+      <div>
+        <h2 style="font-family: 'Spectral', serif; font-weight: 600; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.015em; margin: 0 0 8px;">The work</h2>
+        <p style="font-size: 16px; color: #6A7476; margin: 0; max-width: 520px; text-wrap: pretty;">Each one is a real thing you can open and use. Some are polished, some are held together with tape.</p>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
+      <sc-for list="{{ visible }}" as="p" hint-placeholder-count="3">
+        <article style="display: flex; flex-direction: column; background: #FBF7EE; border: 1px solid rgba(27,36,38,0.09); border-radius: 20px; padding: 24px; box-shadow: 0 1px 0 rgba(27,36,38,0.04); animation: floatIn 0.4s ease both;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px;">
+            <span style="{{ p.badgeStyle }}">{{ p.statusLabel }}</span>
+            <span style="font-size: 12.5px; color: #93999A; font-weight: 500;">Updated {{ p.updated }}</span>
+          </div>
+          <h3 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; margin: 0 0 4px;">{{ p.name }}</h3>
+          <div style="font-size: 13.5px; font-weight: 600; color: #DE9A4A; margin-bottom: 14px;">{{ p.subtitle }}</div>
+          <p style="font-size: 15.5px; line-height: 1.58; color: #3C4749; margin: 0 0 22px; flex: 1; text-wrap: pretty;">{{ p.description }}</p>
+          <div style="padding-top: 18px; border-top: 1px solid rgba(27,36,38,0.08);">
+            <a href="{{ p.link }}" style="{{ p.ctaStyle }}">{{ p.ctaLabel }}</a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="contribute" style="background: #14675B; color: #F5EFE2; position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(115deg, rgba(245,239,226,0.05) 0 1px, transparent 1px 28px); pointer-events: none;"></div>
+    
+  </section>
+
+  <footer id="about" style="max-width: 1280px; margin: 0 auto; padding: clamp(40px, 6vw, 64px) clamp(20px, 5vw, 96px);">
+    <div style="position: relative; overflow: hidden; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 32px; background: #14675B; color: #F5EFE2; border-radius: 22px; padding: clamp(30px, 4vw, 44px); margin-bottom: 28px;">
+      <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(115deg, rgba(245,239,226,0.05) 0 1px, transparent 1px 28px); pointer-events: none;"></div>
+      <div style="position: relative; max-width: 560px;">
+        <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #F0C489; margin-bottom: 14px;">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #DE9A4A;"></span>
+          About this project
+        </span>
+        <p style="font-size: clamp(16px, 1.9vw, 19px); line-height: 1.6; color: rgba(245,239,226,0.9); margin: 0; text-wrap: pretty;">Lakeview Labs is a small, non-commercial workshop run by two neighbors. We build and share little web and app experiments made for one place in particular — Lakeview East. Everything here is a work in progress, made in our spare time because we live here too.</p>
+      </div>
+      <div style="position: relative; font-size: 15px;">
+        <div style="font-weight: 600; color: #F5EFE2; margin-bottom: 8px;">Get in touch</div>
+        <a href="mailto:hello@lakeviewlabs.org" style="color: #F0C489;">hello@lakeviewlabs.org</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding-top: 24px; font-size: 14px; color: #6A7476;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 9px; background: #14675B;">
+          <svg width="18" height="18" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M13.7 25 Q17 22.5 20 25 T26.3 25 L28.6 30 Q29.6 32.2 27.4 32.2 H12.6 Q10.4 32.2 11.4 30 Z" fill="#DE9A4A"></path>
+            <path d="M16 9 V17 L10.6 29.4 Q9.5 32.2 12.4 32.2 H27.6 Q30.5 32.2 29.4 29.4 L24 17 V9" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14.4 9 H25.6" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span style="font-weight: 600; color: #1B2426;">Lakeview Labs</span>
+      </div>
+      <span>Made in Lakeview East by Casey &amp; Ben.</span>
+    </div>
+  </footer>
+
+  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position: fixed; inset: 0; z-index: 100; background: rgba(15,24,25,0.5); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; padding: 20px; animation: floatIn 0.2s ease both;">
+      <div onClick="{{ stopClick }}" style="width: 100%; max-width: 480px; background: #FBF7EE; border-radius: 22px; box-shadow: 0 24px 60px rgba(15,24,25,0.28); overflow: hidden;">
+        <div style="padding: 28px clamp(22px, 5vw, 34px) 0;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
+            <div>
+              <h3 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em; margin: 0 0 6px;">Pitch an idea</h3>
+              <p style="font-size: 15px; color: #6A7476; margin: 0; text-wrap: pretty;">A problem worth solving, or a project you'd build — send it our way.</p>
+            </div>
+            <button onClick="{{ closeModal }}" aria-label="Close" style="flex: none; width: 34px; height: 34px; border-radius: 10px; border: none; background: rgba(27,36,38,0.06); color: #3C4749; font-size: 18px; line-height: 1; cursor: pointer;">×</button>
+          </div>
+        </div>
+
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 26px clamp(22px, 5vw, 34px) 34px; text-align: center;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: rgba(20,103,91,0.12); color: #14675B; font-size: 26px; margin-bottom: 16px;">✓</div>
+            <h4 style="font-family: 'Spectral', serif; font-weight: 700; font-size: 20px; margin: 0 0 8px;">Thanks, neighbor.</h4>
+            <p style="font-size: 15px; color: #6A7476; margin: 0 0 22px; text-wrap: pretty;">We got your idea and we'll be in touch. Odds are you'll just run into one of us on the block first.</p>
+            <button onClick="{{ closeModal }}" style="background: #14675B; color: #F5EFE2; border: none; padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 15px; font-family: 'Public Sans', sans-serif; cursor: pointer; box-shadow: 0 3px 0 #0E4A41;">Done</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <div style="padding: 22px clamp(22px, 5vw, 34px) 30px; display: flex; flex-direction: column; gap: 18px;">
+            <label style="display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-size: 13px; font-weight: 600; color: #1B2426;">Your idea or the problem</span>
+              <textarea value="{{ idea }}" onChange="{{ onIdea }}" placeholder="e.g. It's hard to know when street cleaning is happening on our block…" rows="4" style="font-family: 'Public Sans', sans-serif; font-size: 15px; color: #1B2426; background: #F5EFE2; border: 1px solid rgba(27,36,38,0.16); border-radius: 12px; padding: 12px 14px; resize: vertical; outline: none;"></textarea>
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-size: 13px; font-weight: 600; color: #1B2426;">Your email</span>
+              <input type="email" value="{{ email }}" onChange="{{ onEmail }}" placeholder="you@example.com" style="font-family: 'Public Sans', sans-serif; font-size: 15px; color: #1B2426; background: #F5EFE2; border: 1px solid rgba(27,36,38,0.16); border-radius: 12px; padding: 12px 14px; outline: none;">
+            </label>
+            <button onClick="{{ submit }}" disabled="{{ cannotSubmit }}" style="{{ submitStyle }}">Send it over</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280, &quot;height&quot;: 900}}">
+class Component extends DCLogic {
+  state = { filter: "All", modalOpen: false, submitted: false, idea: "", email: "" };
+
+  get projects() {
+    return [
+      { key: "gone", name: "Gone", subtitle: "Graffiti removal", status: "live",
+        description: "Snap a photo of a tagged wall and Gone routes it to the right cleanup crew, then tracks it until the block looks cared-for again.",
+        updated: "Aug 2026", link: "https://graffiti-zapper.caseymhudetz.workers.dev/" },
+      { key: "bulboard", name: "Bulboard", subtitle: "Hyperlocal bulletin board", status: "live",
+        description: "A hyperlocal bulletin board for keeping up with what's happening around East Lakeview \u2014 events, notices, and neighborly odds and ends, all in one place.",
+        updated: "Aug 2026", link: "https://nettelhorst.bulbord.com/" },
+      { key: "haunt", name: "The Haunt", subtitle: "Decoration voting", status: "beta",
+        description: "Vote for the best Halloween decorations on the block and crown a neighborhood champion each October. Bragging rights included.",
+        updated: "Jul 2026", link: "https://thehauntof44.netlify.app/" },
+      { key: "rats", name: "Rats of Lakeview", subtitle: "Tracking the local rat population", status: "live",
+        description: "A running look at the rats of Lakeview \u2014 where they're turning up, hot spots to watch, and what's being done about them.",
+        updated: "Aug 2026", link: "https://rats.caseymhudetz.workers.dev/" },
+      { key: "ward44", name: "44 Graffiti", subtitle: "Live graffiti data \u00b7 44th Ward", status: "live",
+        description: "A live look at graffiti activity across the 44th Ward \u2014 what's getting tagged, where, and how fast it's cleaned up.",
+        updated: "Aug 2026", link: "https://44graffiti.netlify.app/" },
+      { key: "soon", name: "Soon", subtitle: "Visualizing the future", status: "idea",
+        description: "A before-and-after view of proposed changes to the neighborhood, so neighbors can picture what's coming before a shovel hits the ground.",
+        updated: "Aug 2026", link: "#" },
+    ];
+  }
+
+  statusMeta(status) {
+    const map = {
+      live: { label: "Live", bg: "rgba(20,103,91,0.12)", fg: "#14675B" },
+      beta: { label: "Beta", bg: "rgba(222,154,74,0.16)", fg: "#B87A2E" },
+      idea: { label: "Idea", bg: "rgba(27,36,38,0.08)", fg: "#6A7476" },
+    };
+    return map[status];
+  }
+
+  renderVals() {
+    const all = this.projects;
+    const active = this.state.filter;
+    const options = ["All", "Live", "Beta", "Idea"];
+
+    const filters = options.map(label => {
+      const on = label === active;
+      return {
+        label,
+        onClick: () => this.setState({ filter: label }),
+        style: `cursor: pointer; font-family: 'Public Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; border: 1px solid ${on ? "#14675B" : "rgba(27,36,38,0.14)"}; background: ${on ? "#14675B" : "transparent"}; color: ${on ? "#F5EFE2" : "#3C4749"}; transition: all 0.15s ease;`,
+      };
+    });
+
+    const visible = all
+      .filter(p => active === "All" || this.statusMeta(p.status).label === active)
+      .map(p => {
+        const m = this.statusMeta(p.status);
+        return {
+          ...p,
+          statusLabel: m.label,
+          badgeStyle: `display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em; padding: 5px 12px; border-radius: 999px; background: ${m.bg}; color: ${m.fg};`,
+          ctaLabel: p.status === "idea" ? "Follow along" : "Try it →",
+          ctaStyle: `display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: ${p.status === "idea" ? "#6A7476" : "#14675B"};`,
+        };
+      });
+
+    const canSubmit = this.state.idea.trim().length > 0 && /\S+@\S+\.\S+/.test(this.state.email);
+
+    return {
+      filters,
+      visible,
+      modalOpen: this.state.modalOpen,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      idea: this.state.idea,
+      email: this.state.email,
+      cannotSubmit: !canSubmit,
+      submitStyle: `border: none; padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: 16px; font-family: 'Public Sans', sans-serif; color: #F5EFE2; background: ${canSubmit ? "#14675B" : "#9BB3AD"}; box-shadow: ${canSubmit ? "0 3px 0 #0E4A41" : "none"}; cursor: ${canSubmit ? "pointer" : "not-allowed"}; transition: background 0.15s ease;`,
+      openModal: () => this.setState({ modalOpen: true, submitted: false }),
+      closeModal: () => this.setState({ modalOpen: false }),
+      stopClick: (e) => e.stopPropagation(),
+      onIdea: (e) => this.setState({ idea: e.target.value }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      submit: () => { if (canSubmit) this.setState({ submitted: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>
