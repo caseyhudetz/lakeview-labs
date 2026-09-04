@@ -75,17 +75,6 @@ a:hover { color: var(--green-dark); }
   border-radius: 999px;
 }
 
-/* Weave — the diagonal hatch used behind the hero and green panels. */
-.weave { position: relative; overflow: hidden; }
-.weave::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(115deg, rgba(20, 103, 91, 0.06) 0 1px, transparent 1px 26px);
-  pointer-events: none;
-}
-.weave > * { position: relative; }
-
 /* Header */
 
 .site-header {
@@ -147,69 +136,17 @@ a:hover { color: var(--green-dark); }
 }
 .btn--green:hover { background: var(--green-dark); color: var(--sand); }
 
-/* Hero */
-
-.hero { padding-top: clamp(28px, 4.5vw, 48px); padding-bottom: clamp(30px, 5vw, 56px); }
-.hero__inner { max-width: 780px; }
-.hero h1 {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(30px, 4.6vw, 46px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0;
-  text-wrap: balance;
-}
-.hero h1 em {
-  color: var(--green);
-  font-style: italic;
-}
-
 /* Projects */
 
-.projects { padding-bottom: clamp(56px, 8vw, 96px); }
+.projects { padding-top: clamp(28px, 4vw, 44px); padding-bottom: clamp(56px, 8vw, 96px); }
 
-.section-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 32px;
-}
+.section-head { margin-bottom: 28px; }
 .section-head h2 {
   font-family: var(--serif);
   font-weight: 600;
   font-size: clamp(26px, 3.4vw, 40px);
   letter-spacing: -0.015em;
-  margin: 0 0 8px;
-}
-.section-head p {
-  font-size: 16px;
-  color: var(--ink-50);
   margin: 0;
-  max-width: 520px;
-  text-wrap: pretty;
-}
-
-.filters { display: flex; gap: 8px; flex-wrap: wrap; }
-.filter {
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 600;
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(27, 36, 38, 0.14);
-  background: transparent;
-  color: var(--ink-70);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.filter:hover { border-color: var(--green); color: var(--green); }
-.filter[aria-pressed="true"] {
-  background: var(--green);
-  border-color: var(--green);
-  color: var(--sand);
 }
 
 .project-grid {
@@ -219,6 +156,8 @@ a:hover { color: var(--green-dark); }
 }
 
 .project {
+  position: relative;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   background: var(--sand-card);
@@ -241,6 +180,12 @@ a:hover { color: var(--green-dark); }
 .project h3 { transition: color 0.18s ease; }
 .project:hover .project__cta { gap: 10px; }
 .project__cta { transition: gap 0.18s ease; }
+.project__cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+}
 
 .project__meta {
   display: flex;
@@ -299,17 +244,20 @@ a:hover { color: var(--green-dark); }
   font-weight: 700;
   color: var(--green);
 }
-.project__cta--muted { color: var(--ink-50); cursor: default; }
-
-.projects__empty {
-  font-size: 16px;
-  color: var(--ink-50);
-  margin: 8px 0 0;
-}
+.project__cta--muted { color: var(--ink-50); }
 
 /* About / footer */
 
 .site-footer { padding-top: clamp(40px, 6vw, 64px); padding-bottom: clamp(40px, 6vw, 64px); }
+
+.about-note {
+  max-width: 620px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink-50);
+  margin: 0 0 24px;
+  text-wrap: pretty;
+}
 
 .colophon {
   display: flex;

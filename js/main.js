@@ -5,7 +5,10 @@
 (function () {
   "use strict";
 
-  /* ---- Filters ---- */
+  /* ---- Filters ----
+     The status buttons are off the page for now. Cards still carry
+     data-status, so putting the buttons back in index.html is all it takes
+     to switch filtering on again. */
 
   var filters = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
   var projects = Array.prototype.slice.call(document.querySelectorAll(".project"));

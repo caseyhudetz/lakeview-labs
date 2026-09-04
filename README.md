@@ -31,12 +31,15 @@ design/           the original Claude Design source (see below)
 Projects are plain HTML cards in `index.html`, inside `#project-grid`. Copy an
 existing `<article class="project">`, then set:
 
-- `data-status` — `live`, `beta`, or `idea`. This drives the filter buttons.
+- `data-status` — `live`, `beta`, or `idea`. The status filter buttons are
+  currently off the page; re-adding them to `index.html` turns filtering back
+  on, and `js/main.js` picks them up with no other changes.
 - the badge class — `badge--live`, `badge--beta`, or plain `badge` for an idea.
 - the name, subtitle, description, "Updated" month, and link.
 
 An idea with no link uses a "Follow along" button that opens the pitch modal
-instead of a `Try it →` link.
+instead of a `Try it →` link. Either way the whole card is the click target —
+the CTA stretches over it — so a card should hold exactly one.
 
 ## The pitch form
 

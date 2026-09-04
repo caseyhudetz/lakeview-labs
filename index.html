@@ -34,24 +34,9 @@
 </header>
 
 <main id="top">
-  <section class="hero weave shell">
-    <div class="hero__inner">
-      <h1>Experiments to make Lakeview <em>safer, stronger, and more beautiful.</em></h1>
-    </div>
-  </section>
-
   <section class="projects shell" id="projects">
     <div class="section-head">
-      <div>
-        <h2>The work</h2>
-        <p>Each one is a real thing you can open and use. Some are polished, some are held together with tape.</p>
-      </div>
-      <div class="filters" role="group" aria-label="Filter projects by status">
-        <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
-        <button type="button" class="filter" data-filter="live" aria-pressed="false">Live</button>
-        <button type="button" class="filter" data-filter="beta" aria-pressed="false">Beta</button>
-        <button type="button" class="filter" data-filter="idea" aria-pressed="false">Idea</button>
-      </div>
+      <h2>The work</h2>
     </div>
 
     <!-- To add a project: copy one card, set data-status to live | beta | idea. -->
@@ -160,6 +145,19 @@
         </div>
       </article>
 
+      <article class="project" data-status="live">
+        <div class="project__meta">
+          <span class="badge badge--live">Live</span>
+          <span class="project__updated">Updated Sep 2026</span>
+        </div>
+        <h3>44 Biking</h3>
+        <div class="project__subtitle">Bike crashes &middot; 44th Ward</div>
+        <p>Every reported bike accident in the ward since 2018, mapped &mdash; the corners and stretches of road that keep turning up.</p>
+        <div class="project__footer">
+          <a class="project__cta" href="https://44biking.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
       <article class="project" data-status="idea">
         <div class="project__meta">
           <span class="badge">Idea</span>
@@ -173,12 +171,11 @@
         </div>
       </article>
     </div>
-
-    <p class="projects__empty" id="projects-empty" hidden>Nothing here yet — try another filter.</p>
   </section>
 </main>
 
 <footer class="site-footer shell">
+  <p class="about-note">Lakeview Labs is a small, non-commercial workshop run by two neighbors &mdash; little web experiments made for one place in particular, Lakeview East. Everything here is a work in progress, made in our spare time because we live here too.</p>
   <div class="colophon">
     <div class="colophon__brand">
       <span class="colophon__mark">
