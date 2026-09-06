@@ -8,10 +8,7 @@
       event.preventDefault();
       var address = addressForm.elements.address.value.trim();
       if (!address) return;
-      /* Jurisdiction does not yet expose a documented query-string contract.
-         Preserve the address for the handoff, then open the tool. */
-      try { sessionStorage.setItem("lakeviewLabsAddress", address); } catch (e) {}
-      window.location.href = "https://jurisdiction.caseymhudetz.workers.dev/";
+      window.location.href = "my-block.html?address=" + encodeURIComponent(address);
     });
   }
 
