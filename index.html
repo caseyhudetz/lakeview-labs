@@ -3,281 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lakeview Labs — experiments for Lakeview East</title>
-<meta name="description" content="A small, non-commercial workshop run by two neighbors, building little web experiments for Lakeview East, Chicago.">
+<title>Lakeview Labs — tools for understanding and improving Lakeview East</title>
+<meta name="description" content="Small civic tools for understanding what is happening in Lakeview East, figuring out who is responsible and making it easier to act.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lakeview Labs">
-<meta property="og:description" content="Experiments to make Lakeview safer, stronger, and more beautiful.">
+<meta property="og:description" content="Understand your block. See what is happening. Fix what needs fixing.">
 <meta name="theme-color" content="#14675B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/neighborhood-os.css">
 </head>
 <body>
-<a class="skip-link" href="#projects">Skip to the projects</a>
-
-<!-- Card glyphs. Each project references one by id; add a symbol here for a
-     new card, then point its <use href> at it. -->
-<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
-  <symbol id="g-spray" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="15" y="16" width="16" height="26" rx="4"/>
-    <path d="M20 16v-5h6v5"/>
-    <path d="M36 11h1M40 15h1M35 19h1M41 22h1"/>
-  </symbol>
-  <symbol id="g-pumpkin" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M24 17c-9 0-14 5-14 12s5 12 14 12 14-5 14-12-5-12-14-12Z"/>
-    <path d="M18 19c-3 6-3 14 0 20M30 19c3 6 3 14 0 20"/>
-    <path d="M24 17v-5c0-2 2-3 4-3"/>
-  </symbol>
-  <symbol id="g-rat" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 36c-1-8 4-13 11-13 6 0 10 3 11 8"/>
-    <path d="M12 36h20"/>
-    <path d="M32 31l9 2-9 4"/>
-    <circle cx="30" cy="21" r="3.5"/>
-    <path d="M12 36c-5 1-7 3-6 6"/>
-  </symbol>
-  <symbol id="g-chart" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M9 10v30h30"/>
-    <path d="M14 33l8-9 6 5 11-14"/>
-    <circle cx="14" cy="33" r="1.6" fill="currentColor" stroke="none"/>
-    <circle cx="22" cy="24" r="1.6" fill="currentColor" stroke="none"/>
-    <circle cx="28" cy="29" r="1.6" fill="currentColor" stroke="none"/>
-    <circle cx="39" cy="15" r="1.6" fill="currentColor" stroke="none"/>
-  </symbol>
-  <symbol id="g-districts" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M24 8 40 13v22l-16 5-16-5V13Z"/>
-    <path d="M24 8v32"/>
-    <path d="M8 24h32" stroke-dasharray="3 3"/>
-  </symbol>
-  <symbol id="g-scooter" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="13" cy="34" r="5"/>
-    <circle cx="35" cy="34" r="5"/>
-    <path d="M13 34h18l4-19"/>
-    <path d="M31 15h7"/>
-  </symbol>
-  <symbol id="g-stump" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14 38V24M34 38V24"/>
-    <ellipse cx="24" cy="24" rx="10" ry="4"/>
-    <ellipse cx="24" cy="24" rx="4.5" ry="1.8"/>
-    <path d="M14 38h20"/>
-    <path d="M8 38h4M36 38h4"/>
-  </symbol>
-  <symbol id="g-bike" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="32" r="7"/>
-    <circle cx="36" cy="32" r="7"/>
-    <path d="M12 32l8-14h9l7 14M20 18l8 14"/>
-    <path d="M29 18l3-4"/>
-  </symbol>
-  <symbol id="g-skyline" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M8 40h32"/>
-    <path d="M10 40V26h8v14"/>
-    <path d="M20 40V18h8v22"/>
-    <path d="M30 40V13h8v27" stroke-dasharray="3 3"/>
-  </symbol>
-</svg>
-
-
+<a class="skip-link" href="#projects">Skip to the tools</a>
 <header class="site-header shell">
-  <a class="wordmark" href="#top">
-    <span class="wordmark__mark">
-      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M13.7 25 Q17 22.5 20 25 T26.3 25 L28.6 30 Q29.6 32.2 27.4 32.2 H12.6 Q10.4 32.2 11.4 30 Z" fill="#DE9A4A"/>
-        <path d="M16 9 V17 L10.6 29.4 Q9.5 32.2 12.4 32.2 H27.6 Q30.5 32.2 29.4 29.4 L24 17 V9" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M14.4 9 H25.6" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round"/>
-        <circle cx="20.5" cy="21.5" r="1.15" fill="#F5EFE2"/>
-        <circle cx="23.4" cy="18.4" r="0.85" fill="#F5EFE2"/>
-      </svg>
-    </span>
-    <span class="wordmark__name">Lakeview Labs</span>
-  </a>
+  <a class="wordmark" href="#top"><span class="wordmark__mark" aria-hidden="true">⌁</span><span class="wordmark__name">Lakeview Labs</span></a>
+  <span class="header-note">Lakeview East · Chicago</span>
 </header>
-
 <main id="top">
+  <section class="hero shell">
+    <div class="hero__copy">
+      <p class="eyebrow">A neighborhood, made legible</p>
+      <h1>Understand your block.<br>Then make it better.</h1>
+      <p class="hero__lede">Lakeview Labs turns scattered city data into small, useful tools: who controls what, what keeps happening nearby and what you can actually do about it.</p>
+    </div>
+    <div class="block-start" aria-labelledby="block-title">
+      <div><span class="step-label">START HERE</span><h2 id="block-title">What’s happening on your block?</h2><p>Enter an address to start with the systems around it. More neighborhood signals are coming next.</p></div>
+      <form class="address-form" id="address-form">
+        <label class="sr-only" for="address">Chicago address</label>
+        <input id="address" name="address" type="text" autocomplete="street-address" placeholder="e.g. 3200 N Broadway" required>
+        <button type="submit">Explore <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="block-start__note">First stop: Jurisdiction, our map of the civic and service boundaries around an address.</p>
+    </div>
+  </section>
+
+  <section class="system shell" aria-labelledby="system-title">
+    <div class="section-head"><p class="eyebrow">THE SYSTEM</p><h2 id="system-title">Four ways to know your neighborhood</h2></div>
+    <div class="system-grid">
+      <div class="system-step"><span>01</span><strong>Understand</strong><p>Who owns it, controls it or is responsible for it?</p></div>
+      <div class="system-step"><span>02</span><strong>See</strong><p>What is happening nearby and where does it keep happening?</p></div>
+      <div class="system-step"><span>03</span><strong>Fix</strong><p>Turn something you notice into the right action.</p></div>
+      <div class="system-step"><span>04</span><strong>Measure</strong><p>Did the request close, or did the actual problem get solved?</p></div>
+    </div>
+  </section>
+
   <section class="projects shell" id="projects">
-    <!-- To add a project: copy one card, set data-status to live | beta | idea. -->
-    <div class="project-grid" id="project-grid">
-      <article class="project" data-status="live">
-        <div class="project__meta">
-          <span class="badge badge--live">Live</span>
-          <span class="project__updated">Updated Aug 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-spray"/></svg>
-        <h3>Gone</h3>
-        <div class="project__subtitle">Graffiti removal</div>
-        <p>Snap a photo of a tagged wall and Gone routes it to the right cleanup crew, then tracks it until the block looks cared-for again.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://gone.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
+    <div class="section-head"><p class="eyebrow">TOOLS</p><h2>Built for one place in particular</h2><p>Each experiment attacks a small piece of the same problem: making Lakeview easier to understand and improve.</p></div>
+    <div class="project-groups">
+      <section class="project-group"><div class="group-label"><span>UNDERSTAND</span><p>How the place works</p></div><div class="project-grid project-grid--group">
+        <article class="project project--featured"><div class="project__meta"><span class="badge badge--live">Live</span><span class="project__updated">Sep 2026</span></div><h3>Jurisdiction</h3><div class="project__subtitle">Who is responsible here?</div><p>Enter an address and see the overlapping wards, districts and service areas that quietly determine who handles what.</p><div class="project__footer"><a class="project__cta" href="https://jurisdiction.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Explore your address <span>→</span></a></div></article>
+      </div></section>
 
-      <article class="project" data-status="beta">
-        <div class="project__meta">
-          <span class="badge badge--beta">Beta</span>
-          <span class="project__updated">Updated Jul 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-pumpkin"/></svg>
-        <h3>The Haunt</h3>
-        <div class="project__subtitle">Decoration voting</div>
-        <p>Vote for the best Halloween decorations on the block and crown a neighborhood champion each October. Bragging rights included.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://thehauntof44.netlify.app/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      <section class="project-group"><div class="group-label"><span>SEE</span><p>Signals in the neighborhood</p></div><div class="project-grid project-grid--group">
+        <article class="project"><div class="project__meta"><span class="badge badge--live">Live</span><span class="project__updated">Sep 2026</span></div><h3>Stump</h3><div class="project__subtitle">Tree replacement gaps</div><p>Find places where a tree was removed but a replacement request never followed.</p><div class="project__footer"><a class="project__cta" href="https://stump.caseymhudetz.workers.dev/" target="_blank" rel="noopener">See the gaps →</a></div></article>
+        <article class="project"><div class="project__meta"><span class="badge badge--live">Live</span><span class="project__updated">Aug 2026</span></div><h3>Rats of Lakeview</h3><div class="project__subtitle">Rodent activity</div><p>See where rat complaints persist, which blocks recur and where the problem is changing.</p><div class="project__footer"><a class="project__cta" href="https://rats.caseymhudetz.workers.dev/" target="_blank" rel="noopener">See the rats →</a></div></article>
+        <article class="project"><div class="project__meta"><span class="badge badge--live">Live</span><span class="project__updated">Aug 2026</span></div><h3>44 Graffiti</h3><div class="project__subtitle">Graffiti activity</div><p>Track what gets tagged, where reports cluster and how quickly cleanup happens.</p><div class="project__footer"><a class="project__cta" href="https://graffiti-watch.caseymhudetz.workers.dev/" target="_blank" rel="noopener">See the data →</a></div></article>
+        <article class="project"><div class="project__meta"><span class="badge badge--live">Live</span><span class="project__updated">Sep 2026</span></div><h3>44 Biking</h3><div class="project__subtitle">Bike crashes</div><p>Map reported bike crashes since 2018 and find the corners that keep turning up.</p><div class="project__footer"><a class="project__cta" href="https://bike.caseymhudetz.workers.dev/" target="_blank" rel="noopener">See crash patterns →</a></div></article>
+      </div></section>
 
-      <article class="project" data-status="live">
-        <div class="project__meta">
-          <span class="badge badge--live">Live</span>
-          <span class="project__updated">Updated Aug 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-rat"/></svg>
-        <h3>Rats of Lakeview</h3>
-        <div class="project__subtitle">Tracking the local rat population</div>
-        <p>A running look at the rats of Lakeview — where they're turning up, hot spots to watch, and what's being done about them.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://rats.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      <section class="project-group"><div class="group-label"><span>FIX</span><p>From noticing to action</p></div><div class="project-grid project-grid--group">
+        <article class="project project--featured"><div class="project__meta"><span class="badge badge--live">Live</span><span class="project__updated">Aug 2026</span></div><h3>Gone</h3><div class="project__subtitle">Photo → cleanup request</div><p>Photograph graffiti, identify the right cleanup path and get the information ready to report without learning the city bureaucracy first.</p><div class="project__footer"><a class="project__cta" href="https://gone.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Report something →</a></div></article>
+        <article class="project"><div class="project__meta"><span class="badge badge--live">Live</span><span class="project__updated">Sep 2026</span></div><h3>Scoot</h3><div class="project__subtitle">Abandoned scooters</div><p>See scooter removal requests around the neighborhood and what has already been called in.</p><div class="project__footer"><a class="project__cta" href="https://scoot.caseymhudetz.workers.dev/" target="_blank" rel="noopener">See requests →</a></div></article>
+      </div></section>
 
-      <article class="project" data-status="live">
-        <div class="project__meta">
-          <span class="badge badge--live">Live</span>
-          <span class="project__updated">Updated Aug 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-chart"/></svg>
-        <h3>44 Graffiti</h3>
-        <div class="project__subtitle">Live graffiti data · 44th Ward</div>
-        <p>A live look at graffiti activity across the 44th Ward — what's getting tagged, where, and how fast it's cleaned up.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://graffiti-watch.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-
-      <article class="project" data-status="live">
-        <div class="project__meta">
-          <span class="badge badge--live">Live</span>
-          <span class="project__updated">Updated Sep 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-districts"/></svg>
-        <h3>Jurisdiction</h3>
-        <div class="project__subtitle">Wards, districts, and service areas</div>
-        <p>A hyper-specific breakdown of where your block sits inside Chicago&#39;s bigger systems &mdash; the wards, districts, and service areas that quietly decide how things get handled around here.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://jurisdiction.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
-
-      <article class="project" data-status="live">
-        <div class="project__meta">
-          <span class="badge badge--live">Live</span>
-          <span class="project__updated">Updated Sep 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-scooter"/></svg>
-        <h3>Scoot</h3>
-        <div class="project__subtitle">Scooter removal requests</div>
-        <p>A map of scooter removal requests around the neighborhood &mdash; where the abandoned ones are turning up and what&#39;s already been called in.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://scoot.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
-
-      <article class="project" data-status="live">
-        <div class="project__meta">
-          <span class="badge badge--live">Live</span>
-          <span class="project__updated">Updated Sep 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-stump"/></svg>
-        <h3>Stump</h3>
-        <div class="project__subtitle">Tree removals without a replanting</div>
-        <p>A map of the stumps left behind &mdash; spots where a tree came out but nobody has put in a request for a new one yet.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://stump.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
-
-      <article class="project" data-status="live">
-        <div class="project__meta">
-          <span class="badge badge--live">Live</span>
-          <span class="project__updated">Updated Sep 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-bike"/></svg>
-        <h3>44 Biking</h3>
-        <div class="project__subtitle">Bike crashes &middot; 44th Ward</div>
-        <p>Every reported bike accident in the ward since 2018, mapped &mdash; the corners and stretches of road that keep turning up.</p>
-        <div class="project__footer">
-          <a class="project__cta" href="https://bike.caseymhudetz.workers.dev/" target="_blank" rel="noopener">Try it <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
-
-      <article class="project" data-status="idea">
-        <div class="project__meta">
-          <span class="badge">Idea</span>
-          <span class="project__updated">Updated Aug 2026</span>
-        </div>
-        <svg class="project__glyph" aria-hidden="true"><use href="#g-skyline"/></svg>
-        <h3>Soon</h3>
-        <div class="project__subtitle">Visualizing the future</div>
-        <p>A before-and-after view of proposed changes to the neighborhood, so neighbors can picture what's coming before a shovel hits the ground.</p>
-        <div class="project__footer">
-          <button type="button" class="project__cta project__cta--muted" data-open-pitch>Follow along</button>
-        </div>
-      </article>
+      <section class="project-group"><div class="group-label"><span>EXPERIMENT</span><p>Because neighborhoods should also be fun</p></div><div class="project-grid project-grid--group">
+        <article class="project"><div class="project__meta"><span class="badge badge--beta">Seasonal</span><span class="project__updated">2026</span></div><h3>The Haunt</h3><div class="project__subtitle">Halloween decoration voting</div><p>Nominate and vote for the best Halloween decorations around the neighborhood. Extremely consequential civic infrastructure.</p><div class="project__footer"><a class="project__cta" href="https://thehauntof44.netlify.app/" target="_blank" rel="noopener">Visit The Haunt →</a></div></article>
+        <article class="project"><div class="project__meta"><span class="badge">Idea</span><span class="project__updated">2026</span></div><h3>Soon</h3><div class="project__subtitle">Visualizing what could be</div><p>Photograph a place and imagine concrete ways it could become safer, more useful or more beautiful.</p><div class="project__footer"><button type="button" class="project__cta project__cta--muted" data-open-pitch>Follow along →</button></div></article>
+      </div></section>
     </div>
   </section>
 </main>
-
-<footer class="site-footer shell">
-  <p class="about-note">Lakeview Labs is a small, non-commercial workshop run by two neighbors &mdash; little web experiments made for one place in particular, Lakeview East. Everything here is a work in progress, made in our spare time because we live here too.</p>
-  <div class="colophon">
-    <div class="colophon__brand">
-      <span class="colophon__mark">
-        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <path d="M13.7 25 Q17 22.5 20 25 T26.3 25 L28.6 30 Q29.6 32.2 27.4 32.2 H12.6 Q10.4 32.2 11.4 30 Z" fill="#DE9A4A"/>
-          <path d="M16 9 V17 L10.6 29.4 Q9.5 32.2 12.4 32.2 H27.6 Q30.5 32.2 29.4 29.4 L24 17 V9" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M14.4 9 H25.6" stroke="#F5EFE2" stroke-width="2.4" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <span class="colophon__name">Lakeview Labs</span>
-    </div>
-    <span class="colophon__note">Made in Lakeview East by Casey &amp; Ben &middot; <a href="mailto:hello@lakeviewlabs.org">hello@lakeviewlabs.org</a></span>
-  </div>
-</footer>
-
-<!-- Pitch modal. Set data-endpoint to a form endpoint (Formspree, Netlify
-     function, Worker…) to collect pitches; without one it falls back to email. -->
-<div class="modal" id="pitch-modal" role="dialog" aria-modal="true" aria-labelledby="pitch-title" data-endpoint="" hidden>
-  <div class="modal__panel">
-    <div class="modal__head">
-      <div>
-        <h2 id="pitch-title">Pitch an idea</h2>
-        <p>A problem worth solving, or a project you'd build — send it our way.</p>
-      </div>
-      <button type="button" class="modal__close" data-close-pitch aria-label="Close">×</button>
-    </div>
-
-    <form class="pitch-form" id="pitch-form" novalidate>
-      <label class="field">
-        <span>Your idea or the problem</span>
-        <textarea name="idea" rows="4" required placeholder="e.g. It's hard to know when street cleaning is happening on our block…"></textarea>
-      </label>
-      <label class="field">
-        <span>Your email</span>
-        <input type="email" name="email" required placeholder="you@example.com">
-      </label>
-      <p class="pitch-form__error" id="pitch-error" role="alert" hidden></p>
-      <button type="submit" class="pitch-form__submit" disabled>Send it over</button>
-    </form>
-
-    <div class="pitch-done" id="pitch-done" hidden>
-      <div class="pitch-done__check" aria-hidden="true">✓</div>
-      <h3>Thanks, neighbor.</h3>
-      <p>We got your idea and we'll be in touch. Odds are you'll just run into one of us on the block first.</p>
-      <button type="button" class="btn btn--green" data-close-pitch>Done</button>
-    </div>
-  </div>
-</div>
-
+<footer class="site-footer shell"><p class="about-note">Lakeview Labs is a small, non-commercial workshop run by two neighbors. We use public data, photos and tiny web tools to make the systems around Lakeview East easier to see and easier to act on.</p><div class="colophon"><span class="colophon__name">Lakeview Labs</span><span class="colophon__note">Made in Lakeview East by Casey &amp; Ben · <a href="mailto:hello@lakeviewlabs.org">hello@lakeviewlabs.org</a></span></div></footer>
+<div class="modal" id="pitch-modal" role="dialog" aria-modal="true" aria-labelledby="pitch-title" data-endpoint="" hidden><div class="modal__panel"><div class="modal__head"><div><h2 id="pitch-title">Pitch an idea</h2><p>A neighborhood problem worth solving? Send it our way.</p></div><button type="button" class="modal__close" data-close-pitch aria-label="Close">×</button></div><form class="pitch-form" id="pitch-form" novalidate><label class="field"><span>Your idea or the problem</span><textarea name="idea" rows="4" required placeholder="e.g. It’s impossible to tell why this request keeps closing…"></textarea></label><label class="field"><span>Your email</span><input type="email" name="email" required placeholder="you@example.com"></label><p class="pitch-form__error" id="pitch-error" role="alert" hidden></p><button type="submit" class="pitch-form__submit" disabled>Send it over</button></form><div class="pitch-done" id="pitch-done" hidden><div class="pitch-done__check" aria-hidden="true">✓</div><h3>Thanks, neighbor.</h3><p>We got it.</p><button type="button" class="btn btn--green" data-close-pitch>Done</button></div></div></div>
 <script src="js/main.js" defer></script>
 </body>
 </html>
