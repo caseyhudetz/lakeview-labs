@@ -11,54 +11,17 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/neighborhood-os.css">
 <style>
-  .block-page{padding-top:clamp(28px,5vw,64px);padding-bottom:80px}
-  .block-back{font-size:14px;font-weight:700;display:inline-block;margin-bottom:28px}
-  .block-kicker{font-size:12px;font-weight:800;letter-spacing:.09em;color:var(--amber);margin:0 0 10px}
-  .block-title{font-family:var(--serif);font-size:clamp(38px,7vw,72px);line-height:.98;letter-spacing:-.035em;margin:0;max-width:900px}
-  .block-address{font-size:clamp(18px,3vw,26px);color:var(--ink-50);margin:14px 0 0}
-  .block-search{display:flex;gap:10px;margin:32px 0 48px;max-width:680px}
-  .block-search input{flex:1;min-width:0;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(27,36,38,.18);background:var(--sand-card);border-radius:12px;color:var(--ink)}
-  .block-search button{border:0;border-radius:12px;padding:14px 18px;background:var(--green);color:var(--sand);font:inherit;font-weight:700;cursor:pointer}
-  .signal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-  .signal{background:var(--sand-card);border:1px solid var(--rule);border-radius:20px;padding:24px;min-height:190px;display:flex;flex-direction:column}
-  .signal--hero{grid-column:1/-1;min-height:230px}
-  .signal__eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--amber);margin-bottom:14px}
-  .signal h2{font-family:var(--serif);font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
-  .signal p{color:var(--ink-70);line-height:1.55;margin:0 0 18px;max-width:62ch}
-  .signal__links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
-  .signal__links a{font-weight:700;font-size:14px}
-  .signal__status{font-size:13px;color:var(--ink-50);margin-top:10px}
-  .context-line{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 24px}
-  .context-pill{font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:rgba(20,103,91,.09);color:var(--green)}
-  @media(max-width:720px){.signal-grid{grid-template-columns:1fr}.signal--hero{grid-column:auto}.block-search{flex-direction:column}.block-search button{width:100%}}
+  .block-page{padding-top:clamp(28px,5vw,64px);padding-bottom:80px}.block-back{font-size:14px;font-weight:700;display:inline-block;margin-bottom:28px}.block-kicker{font-size:12px;font-weight:800;letter-spacing:.09em;color:var(--amber);margin:0 0 10px}.block-title{font-family:var(--serif);font-size:clamp(38px,7vw,72px);line-height:.98;letter-spacing:-.035em;margin:0;max-width:900px}.block-address{font-size:clamp(18px,3vw,26px);color:var(--ink-50);margin:14px 0 0}.block-search{display:flex;gap:10px;margin:32px 0 48px;max-width:680px}.block-search input{flex:1;min-width:0;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(27,36,38,.18);background:var(--sand-card);border-radius:12px;color:var(--ink)}.block-search button{border:0;border-radius:12px;padding:14px 18px;background:var(--green);color:var(--sand);font:inherit;font-weight:700;cursor:pointer}.signal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.signal{background:var(--sand-card);border:1px solid var(--rule);border-radius:20px;padding:24px;min-height:190px;display:flex;flex-direction:column}.signal--hero{grid-column:1/-1;min-height:230px}.signal__eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--amber);margin-bottom:14px}.signal h2{font-family:var(--serif);font-size:28px;letter-spacing:-.02em;margin:0 0 8px}.signal p{color:var(--ink-70);line-height:1.55;margin:0 0 18px;max-width:62ch}.signal__links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}.signal__links a{font-weight:700;font-size:14px}.signal__status{font-size:13px;color:var(--ink-50);margin-top:10px}.context-line{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 24px}.context-pill{font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:rgba(20,103,91,.09);color:var(--green)}@media(max-width:720px){.signal-grid{grid-template-columns:1fr}.signal--hero{grid-column:auto}.block-search{flex-direction:column}.block-search button{width:100%}}
 </style>
 </head>
 <body>
 <header class="site-header shell"><a class="wordmark" href="index.html"><span class="wordmark__mark" aria-hidden="true">⌁</span><span class="wordmark__name">Lakeview Labs</span></a><span class="header-note">My Block</span></header>
 <main class="block-page shell">
-  <a class="block-back" href="index.html">← All tools</a>
-  <p class="block-kicker">MY BLOCK</p>
-  <h1 class="block-title">Start with one address.</h1>
-  <p class="block-address" id="display-address">Enter a Lakeview East address</p>
-  <form class="block-search" id="block-search">
-    <input id="block-address" name="address" autocomplete="street-address" placeholder="3200 N Broadway" required>
-    <button type="submit">Update block</button>
-  </form>
-  <div class="context-line" id="context-line" hidden>
-    <span class="context-pill">Lakeview East</span>
-    <span class="context-pill">Chicago</span>
-    <span class="context-pill" id="coords-pill"></span>
-  </div>
-
+  <a class="block-back" href="index.html">← All tools</a><p class="block-kicker">MY BLOCK</p><h1 class="block-title">Start with one address.</h1><p class="block-address" id="display-address">Enter a Lakeview East address</p>
+  <form class="block-search" id="block-search"><input id="block-address" name="address" autocomplete="street-address" placeholder="3200 N Broadway" required><button type="submit">Update block</button></form>
+  <div class="context-line" id="context-line" hidden><span class="context-pill">Lakeview East</span><span class="context-pill">Chicago</span><span class="context-pill" id="coords-pill"></span></div>
   <section class="signal-grid" aria-label="Neighborhood tools">
-    <article class="signal signal--hero">
-      <div class="signal__eyebrow">UNDERSTAND</div>
-      <h2>Who is responsible here?</h2>
-      <p>Start with Jurisdiction to see the overlapping wards, districts and service boundaries around this address, plus who owns the sidewalk, parkway tree, alley and infrastructure around it.</p>
-      <div class="signal__links"><a id="jurisdiction-link" href="https://jurisdiction.caseymhudetz.workers.dev/">Open Jurisdiction →</a></div>
-      <div class="signal__status">The address stays in the URL so each neighborhood tool can consume the same place as we connect them.</div>
-    </article>
-
+    <article class="signal signal--hero"><div class="signal__eyebrow">UNDERSTAND</div><h2>Who is responsible here?</h2><p>Start with Jurisdiction to see the overlapping wards, districts and service boundaries around this address, plus who owns the sidewalk, parkway tree, alley and infrastructure around it.</p><div class="signal__links"><a id="jurisdiction-link" href="https://jurisdiction.caseymhudetz.workers.dev/">Open Jurisdiction →</a></div><div class="signal__status">Your address is handed directly into Jurisdiction, so the map opens already focused on this block.</div></article>
     <article class="signal"><div class="signal__eyebrow">TREES</div><h2>Tree replacement gaps</h2><p>See where a tree came out without a replacement request following it.</p><div class="signal__links"><a href="https://stump.caseymhudetz.workers.dev/">Open Stump →</a></div></article>
     <article class="signal"><div class="signal__eyebrow">GRAFFITI</div><h2>Tagging and cleanup</h2><p>See where graffiti reports cluster and how quickly cleanup is happening across the ward.</p><div class="signal__links"><a href="https://graffiti-watch.caseymhudetz.workers.dev/">Open 44 Graffiti →</a><a href="https://gone.caseymhudetz.workers.dev/">Report graffiti →</a></div></article>
     <article class="signal"><div class="signal__eyebrow">RODENTS</div><h2>Rat persistence</h2><p>Look for recurring rodent complaints and the blocks that keep turning up.</p><div class="signal__links"><a href="https://rats.caseymhudetz.workers.dev/">Open Rats of Lakeview →</a></div></article>
@@ -66,35 +29,7 @@
   </section>
 </main>
 <script>
-(function(){
-  const params=new URLSearchParams(location.search);
-  const input=document.getElementById('block-address');
-  const display=document.getElementById('display-address');
-  const form=document.getElementById('block-search');
-  const jurisdiction=document.getElementById('jurisdiction-link');
-  const context=document.getElementById('context-line');
-  const coords=document.getElementById('coords-pill');
-  function syncAddress(value){
-    const address=(value||'').trim();
-    input.value=address;
-    display.textContent=address||'Enter a Lakeview East address';
-    jurisdiction.href='https://jurisdiction.caseymhudetz.workers.dev/'+(address?'?address='+encodeURIComponent(address):'');
-    if(!address){context.hidden=true;return;}
-    context.hidden=false;geocode(address);
-  }
-  async function geocode(address){
-    coords.textContent='Locating…';
-    try{
-      const url='https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q='+encodeURIComponent(address+', Chicago, IL');
-      const res=await fetch(url,{headers:{Accept:'application/json'}});const data=await res.json();
-      if(!data.length){coords.textContent='Address not located';return;}
-      const lat=Number(data[0].lat),lon=Number(data[0].lon);coords.textContent=lat.toFixed(4)+', '+lon.toFixed(4);
-      params.set('lat',lat.toFixed(6));params.set('lon',lon.toFixed(6));history.replaceState(null,'','?'+params.toString());
-    }catch(e){coords.textContent='Location unavailable';}
-  }
-  form.addEventListener('submit',function(e){e.preventDefault();const address=input.value.trim();if(!address)return;params.set('address',address);params.delete('lat');params.delete('lon');history.replaceState(null,'','?'+params.toString());syncAddress(address);});
-  syncAddress(params.get('address')||'');
-})();
+(function(){const params=new URLSearchParams(location.search),input=document.getElementById('block-address'),display=document.getElementById('display-address'),form=document.getElementById('block-search'),jurisdiction=document.getElementById('jurisdiction-link'),context=document.getElementById('context-line'),coords=document.getElementById('coords-pill');function syncAddress(value){const address=(value||'').trim();input.value=address;display.textContent=address||'Enter a Lakeview East address';jurisdiction.href='https://jurisdiction.caseymhudetz.workers.dev/address.html'+(address?'?address='+encodeURIComponent(address):'');if(!address){context.hidden=true;return}context.hidden=false;geocode(address)}async function geocode(address){coords.textContent='Locating…';try{const url='https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q='+encodeURIComponent(address+', Chicago, IL');const res=await fetch(url,{headers:{Accept:'application/json'}}),data=await res.json();if(!data.length){coords.textContent='Address not located';return}const lat=Number(data[0].lat),lon=Number(data[0].lon);coords.textContent=lat.toFixed(4)+', '+lon.toFixed(4);params.set('lat',lat.toFixed(6));params.set('lon',lon.toFixed(6));history.replaceState(null,'','?'+params.toString())}catch(e){coords.textContent='Location unavailable'}}form.addEventListener('submit',function(e){e.preventDefault();const address=input.value.trim();if(!address)return;params.set('address',address);params.delete('lat');params.delete('lon');history.replaceState(null,'','?'+params.toString());syncAddress(address)});syncAddress(params.get('address')||'')})();
 </script>
 </body>
 </html>
