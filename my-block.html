@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/neighborhood-os.css">
 <style>
@@ -47,7 +47,7 @@
 <p class="method">Map data: Chicago 311 service requests from the last 90 days, recent tree-removal gaps derived from removal and planting requests and reported pedalcyclist crashes since 2018. The map shows roughly a quarter mile around the selected address. Administrative data can be incomplete, so use this to find things worth looking into rather than as a definitive rating of a block.</p>
 </section>
 </main>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="vendor/leaflet/leaflet.js"></script>
 <script>
 (function(){
 const params=new URLSearchParams(location.search),form=document.getElementById('block-search'),input=document.getElementById('block-address'),placeLabel=document.getElementById('place-label'),coords=document.getElementById('coords'),jurisdiction=document.getElementById('jurisdiction-link'),kicker=document.getElementById('readout-kicker'),readout=document.getElementById('readout-text'),countEl=document.getElementById('readout-count');

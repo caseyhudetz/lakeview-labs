@@ -1,0 +1,13 @@
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const {buildObservations}=require('../js/signals.js');
+const base={latitude:'41.945',longitude:'-87.646',street_number:'660',street_direction:'W',street_name:'ROSCOE',street_type:'ST',duplicate:false};
+const old=new Date(Date.now()-800*86400000).toISOString(),closed=new Date(Date.now()-400*86400000).toISOString();
+const removal={...base,sr_number:'removal',sr_type:'Tree Removal Inspection',status:'Completed',created_date:old,closed_date:closed};
+const planting={...base,sr_number:'planting',sr_type:'Tree Planting Request',status:'Open',created_date:new Date(Date.now()-1000*86400000).toISOString()};
+test('an older open planting request suppresses a gap',()=>{assert.equal(buildObservations({trees:[removal,planting]}).filter(x=>x.type==='gap').length,0)});
+test('canceled planting is not an open backlog or evidence of replacement',()=>{const o=buildObservations({trees:[removal,{...planting,status:'Canceled'}]});assert.equal(o.length,1);assert.equal(o[0].type,'gap')});
+test('flagged and repeated duplicate records do not create a hotspot',()=>{const row={...base,sr_number:'one',status:'Open'};assert.equal(buildObservations({graffiti:[row,row,row,{...row,sr_number:'two',duplicate:true}]}).length,0)});
+test('missing coordinates do not make findings at zero latitude',()=>{assert.equal(buildObservations({trees:[{...removal,latitude:null}]}).length,0)});
+test('planting 40 meters away suppresses a gap',()=>{assert.equal(buildObservations({trees:[removal,{...planting,latitude:String(Number(base.latitude)+40/111320)}]}).filter(x=>x.type==='gap').length,0)});
+test('scores remain within their displayed 100-point scale',()=>{const crashes=Array.from({length:12},(_,i)=>({...base,crash_record_id:String(i),injuries_fatal:1,injuries_incapacitating:1}));assert.ok(buildObservations({crashes}).every(x=>x.score<=100))});
